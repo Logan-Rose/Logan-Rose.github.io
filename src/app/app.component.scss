@@ -1,0 +1,109 @@
+* {
+  font-family: 'Times New Roman', Times, serif !important;
+}
+.page{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+mat-card{
+  background-color: white;
+  color: black;
+}
+.container{
+  padding: 10px;
+  margin: 10%;
+  width: 50%;
+  display: flex;
+  justify-content: center;
+}
+.content{
+  width: 100%;
+}
+
+.row {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin:5px;
+}
+.tile:hover {
+  box-shadow: 2px 2px 5px black;
+  cursor: pointer;
+}
+.tile-selected {
+  box-shadow: 2px 2px 5px black;
+ 
+}
+.tile {
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  background-color: white;
+  margin: 2px;
+}
+.logo{
+  width:60%;
+  height: auto;
+}
+.description{
+  padding: 5px
+}
+.textbox{
+  width: 95%;
+}
+h3{
+  margin: 0px;
+}
+h2{
+  margin-bottom: 6px;
+}
+.title {
+  font-family: 'Times New Roman', Times, serif;
+  text-align: center;
+  font-size: xx-large;
+  padding-top:5%;
+}
+.footer {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  margin:5px;
+}
+fa-icon{
+  margin: 0px 5px;
+  color: black;
+}
+mat-chip{
+  min-height: 24px;
+  pointer-events: none;
+}
+.subtitle {
+  text-align: center;
+}
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.headshot{
+  width: 25%;
+  height: auto;
+  border-radius: 100%;
+  border: solid 4px black
+}
+a {
+  text-decoration: none;
+  color: black;
+}
+.project-title{
+  width: fit-content;
+  
+}
+.project-title:hover {
+  text-decoration: underline;
+}
+p {
+  font-size: 16px
+}
