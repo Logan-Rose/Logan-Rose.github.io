@@ -1,3 +1,13 @@
+//Mobile styling
+@media only screen and (max-width: 600px) {
+  .container {
+    width: 75% !important;
+  }
+  .headshot{
+    width:45% !important
+  }
+}
+
 * {
   font-family: 'Times New Roman', Times, serif !important;
 }
@@ -17,6 +27,7 @@ mat-card{
   display: flex;
   justify-content: center;
 }
+
 .content{
   width: 100%;
 }
@@ -108,4 +119,8 @@ a {
 }
 p {
   font-size: 16px
+}
+fa-icon:hover{
+  transition: 0.25s;
+  color: rgb(88, 37, 165);
 }
