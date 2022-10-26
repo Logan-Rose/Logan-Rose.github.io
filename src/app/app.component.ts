@@ -5,6 +5,7 @@ import { faSquareGithub } from '@fortawesome/free-brands-svg-icons';
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faFile } from '@fortawesome/free-regular-svg-icons';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
+import { faLightbulb } from '@fortawesome/free-regular-svg-icons';
 
 @Component({
   selector: 'app-root',
@@ -13,17 +14,36 @@ import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 })
 export class AppComponent {
 
+  colors = [
+    {
+      'background' : '#FFFFFF',
+      'particles': '#8c128c',
+      'primary' : '#FFFFFF',
+      'onPrimary' : '#000000',
+      'secondary' : '#FFFFFF',
+      'onsecondary' : '#000000',
+    },
+    {
+      'background' : '#2C3639',
+      'particles': '#DCD7C9',
+      'primary' : '#3F4E4F',
+      'onPrimary' : '#DCD7C9',
+      'secondary' : '#A27B5C',
+      'onsecondary' : '#000000',
+    }
+  ]
 
+  darkMode = false;
   id = "tsparticles";
   faGithub = faSquareGithub;
   faLinkedin = faLinkedin;
-  faFile = faFile
-  faEnvelope = faEnvelope
-
+  faFile = faFile;
+  faEnvelope = faEnvelope;
+  faLightbulb = faLightbulb;
   particlesOptions = {
     background: {
       color: {
-        value: "#ffffff"
+        value: this.darkMode ? "#F1A2C3": "#FFFFFF"
       }
     },
     fpsLimit: 120,
@@ -51,10 +71,10 @@ export class AppComponent {
     },
     particles: {
       color: {
-        value: "#680081"
+        value: !this.darkMode ? "#680081": "#FFFFFF"
       },
       links: {
-        color: "#680081",
+        color: !this.darkMode ? "#680081": "#FFFFFF",
         distance: 150,
         enable: true,
         opacity: 0.5,
@@ -101,6 +121,7 @@ export class AppComponent {
   aslSelected = false;
   pricecompereSelected = false;
   tailorSelected = false;
+  
   test(){
     console.log('hello')
   }
@@ -159,5 +180,22 @@ export class AppComponent {
     // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
     // starting from v2 you can add only the features you need reducing the bundle size
     await loadFull(engine);
+  }
+  toggleBrights(){
+    let currentScheme = !this.darkMode ? 1: 0
+    this.particlesOptions.background.color.value = this.colors[currentScheme].background
+    this.particlesOptions.particles.color.value = this.colors[currentScheme].particles
+    this.particlesOptions.particles.links.color = this.colors[currentScheme].particles
+    console.log(this.particlesOptions)
+    this.darkMode = !this.darkMode
+    let r:HTMLElement | null = document.querySelector(':root');
+    if (r) {
+      let rs = getComputedStyle(r)
+      let scheme = this.darkMode ? 1: 0
+      r.style.setProperty('--primary-color' , this.colors[scheme].primary);
+      r.style.setProperty('--on-primary-color', this.colors[scheme].onPrimary);
+      r.style.setProperty('--secondary-color', this.colors[scheme].secondary);
+      r.style.setProperty('--on-secondary-color', this.colors[scheme].onsecondary);
+    }
   }
 }

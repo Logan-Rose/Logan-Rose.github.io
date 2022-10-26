@@ -1,4 +1,12 @@
 <ng-particles
+  *ngIf="!darkMode"
+  [id]="id"
+  [options]="particlesOptions"
+  [particlesInit]="particlesInit"
+  (particlesLoaded)="particlesLoaded($event)"
+></ng-particles>
+<ng-particles
+  *ngIf="darkMode"
   [id]="id"
   [options]="particlesOptions"
   [particlesInit]="particlesInit"
@@ -8,6 +16,13 @@
 <div class="page">
   <mat-card class="container">
     <div class="content">
+      <div class="lightbulb">
+        <fa-icon
+          [icon]="faLightbulb"
+          size="2x"
+          (click)="toggleBrights()"
+        ></fa-icon>
+      </div>
       <div class="header">
         <h1 class="title">Hi, I'm Logan</h1>
         <img class="headshot" src="../assets/img/me.png" />
@@ -33,20 +48,13 @@
 
       <div class="row">
         <mat-card class="tile" (click)="experience('coveo')">
-          <img
-            id="coveo"
-            class="logo"
-            src="../assets/img/Coveo-logo-e1634157639148.png"
-          />
+          <img id="coveo" class="logo" src="../assets/img/coveo.png" />
         </mat-card>
         <mat-card class="tile" (click)="experience('vectorsolv')">
-          <img class="logo" src="../assets/img/1633443165362.jpeg" />
+          <img class="logo" src="../assets/img/vectorsolv.png" />
         </mat-card>
         <mat-card class="tile" (click)="experience('pco')">
-          <img
-            class="logo"
-            src="../assets/img/government-of-canada-vector-logo.png"
-          />
+          <img class="logo" src="../assets/img/pco.png" />
         </mat-card>
       </div>
       <div
