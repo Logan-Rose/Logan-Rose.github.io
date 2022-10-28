@@ -28,7 +28,7 @@ export class AppComponent {
       'particles': '#DCD7C9',
       'primary' : '#3F4E4F',
       'onPrimary' : '#DCD7C9',
-      'secondary' : '#A27B5C',
+      'secondary' : '#DCD7C9',
       'onsecondary' : '#000000',
     }
   ]

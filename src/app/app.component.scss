@@ -119,6 +119,12 @@ mat-chip{
   border-radius: 100%;
   border: solid 4px var(--on-primary-color);
 }
+.headshot:hover {
+  cursor: pointer;
+  transition-duration: .75s;
+  border-radius: 5%;
+
+}
 a {
   text-decoration: none;
   color: var(--on-primary-color);
