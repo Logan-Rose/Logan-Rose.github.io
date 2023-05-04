@@ -26,7 +26,7 @@ export class GithubContributionsComponent implements OnInit {
           const calendar =
             x.data.user.contributionsCollection.contributionCalendar;
           let initialValue: any[] = [];
-
+          console.log(calendar.weeks);
           return {
             totalContributions: calendar.totalContributions,
           };

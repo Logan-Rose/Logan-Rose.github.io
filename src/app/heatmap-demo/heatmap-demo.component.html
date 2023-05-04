@@ -1,0 +1,9 @@
+<div id="chart">
+  <apx-chart
+    [series]="(contributions$ | async).seriesEntries"
+    [chart]="(contributions$ | async).chart"
+    [dataLabels]="(contributions$ | async).dataLabels"
+    [colors]="(contributions$ | async).colors"
+    [xaxis]="(contributions$ | async).xAxis"
+  ></apx-chart>
+</div>

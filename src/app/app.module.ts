@@ -14,13 +14,17 @@ import { LiveResumeComponent } from './live-resume/live-resume.component';
 import { GraphQLModule } from './graphql.module';
 import { HttpClientModule } from '@angular/common/http';
 import { GithubContributionsComponent } from './github-contributions/github-contributions.component';
+import { HeatmapDemoComponent } from './heatmap-demo/heatmap-demo.component';
+import { NgApexchartsModule } from 'ng-apexcharts';
 @NgModule({
   declarations: [
     AppComponent,
     LiveResumeComponent,
     GithubContributionsComponent,
+    HeatmapDemoComponent,
   ],
   imports: [
+    NgApexchartsModule,
     MatDialogModule,
     BrowserModule,
     AppRoutingModule,
