@@ -1,0 +1,67 @@
+
+.header {
+  border-bottom: solid 1px black;
+}
+.title {
+  margin: 0px;
+  padding: 0px;
+  font-weight: 100;
+  font-size: 72px;
+  color: black
+}
+.subtitle {
+  margin: 0px;
+  padding: 0px;
+  font-weight: 100;
+  color: black
+}
+
+.content {
+  width: auto;
+  background-color: white;  
+  padding: 50px 100px;
+  z-index: 2;
+}
+
+ng-particles {
+  z-index: 1;
+}
+
+.horizontal-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.contact {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 100%;
+}
+
+mat-chip {
+  background-color: #d8d8d6;
+}
+
+mat-chip:hover {
+  background-color: #c7c7c7;
+  cursor: pointer;
+}
+.title-subtitle {
+  display: flex;
+  padding: 0px;
+  margin: 0px;
+}
+h4,
+p,
+a {
+  margin: 10px 0px;
+  color: black;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}

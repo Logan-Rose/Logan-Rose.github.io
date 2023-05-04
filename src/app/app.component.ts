@@ -1,40 +1,52 @@
-import { Component } from '@angular/core';
-import { MoveDirection, ClickMode, HoverMode, OutMode, Engine, Container } from "tsparticles-engine";
-import { loadFull } from "tsparticles";
+import { Component, Inject } from '@angular/core';
+import {
+  MoveDirection,
+  ClickMode,
+  HoverMode,
+  OutMode,
+  Engine,
+  Container,
+} from 'tsparticles-engine';
+import { loadFull } from 'tsparticles';
 import { faSquareGithub } from '@fortawesome/free-brands-svg-icons';
 import { faLinkedin } from '@fortawesome/free-brands-svg-icons';
 import { faFile } from '@fortawesome/free-regular-svg-icons';
 import { faEnvelope } from '@fortawesome/free-regular-svg-icons';
 import { faLightbulb } from '@fortawesome/free-regular-svg-icons';
+import {
+  MatDialog,
+  MAT_DIALOG_DATA,
+  MatDialogRef,
+} from '@angular/material/dialog';
+import { LiveResumeComponent } from './live-resume/live-resume.component';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+  styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-
   colors = [
     {
-      'background' : '#FFFFFF',
-      'particles': '#8c128c',
-      'primary' : '#FFFFFF',
-      'onPrimary' : '#000000',
-      'secondary' : '#FFFFFF',
-      'onsecondary' : '#000000',
+      background: '#FFFFFF',
+      particles: '#8c128c',
+      primary: '#FFFFFF',
+      onPrimary: '#000000',
+      secondary: '#FFFFFF',
+      onsecondary: '#000000',
     },
     {
-      'background' : '#2C3639',
-      'particles': '#DCD7C9',
-      'primary' : '#3F4E4F',
-      'onPrimary' : '#DCD7C9',
-      'secondary' : '#DCD7C9',
-      'onsecondary' : '#000000',
-    }
-  ]
+      background: '#2C3639',
+      particles: '#DCD7C9',
+      primary: '#3F4E4F',
+      onPrimary: '#DCD7C9',
+      secondary: '#DCD7C9',
+      onsecondary: '#000000',
+    },
+  ];
 
   darkMode = false;
-  id = "tsparticles";
+  id = 'tsparticles';
   faGithub = faSquareGithub;
   faLinkedin = faLinkedin;
   faFile = faFile;
@@ -43,76 +55,75 @@ export class AppComponent {
   particlesOptions = {
     background: {
       color: {
-        value: this.darkMode ? "#F1A2C3": "#FFFFFF"
-      }
+        value: this.darkMode ? '#F1A2C3' : '#FFFFFF',
+      },
     },
     fpsLimit: 120,
     interactivity: {
       events: {
         onHover: {
           enable: true,
-          mode: HoverMode.grab
+          mode: HoverMode.grab,
         },
         onClick: {
           enable: true,
-          mode: ClickMode.push
+          mode: ClickMode.push,
         },
-        resize: true
+        resize: true,
       },
       modes: {
         push: {
-          quantity: 2
+          quantity: 2,
         },
         repulse: {
           distance: 200,
-          duration: 0.4
-        }
-      }
+          duration: 0.4,
+        },
+      },
     },
     particles: {
       color: {
-        value: !this.darkMode ? "#680081": "#FFFFFF"
+        value: !this.darkMode ? '#680081' : '#FFFFFF',
       },
       links: {
-        color: !this.darkMode ? "#680081": "#FFFFFF",
+        color: !this.darkMode ? '#680081' : '#FFFFFF',
         distance: 150,
         enable: true,
         opacity: 0.5,
-        width: 1
+        width: 1,
       },
       collisions: {
-        enable: true
+        enable: true,
       },
       move: {
         direction: MoveDirection.none,
         enable: true,
         outModes: {
-          default: OutMode.bounce
+          default: OutMode.bounce,
         },
         random: false,
         speed: 1,
-        straight: false
+        straight: false,
       },
       number: {
         density: {
           enable: true,
-          area: 800
+          area: 800,
         },
-        value: 30
+        value: 30,
       },
       opacity: {
-        value: 0.5
+        value: 0.5,
       },
       shape: {
-        type: "circle"
+        type: 'circle',
       },
       size: {
-        value: {min: 1, max: 3 },
-      }
+        value: { min: 1, max: 3 },
+      },
     },
-    detectRetina: true
+    detectRetina: true,
   };
-
 
   title = 'portfolio';
   coveoSelected = false;
@@ -121,53 +132,55 @@ export class AppComponent {
   aslSelected = false;
   pricecompereSelected = false;
   tailorSelected = false;
-  
-  test(){
-    console.log('hello')
+
+  constructor(public dialog: MatDialog) {}
+
+  test() {
+    console.log('hello');
   }
-  experience(selected: any){
-    switch(selected){
+  experience(selected: any) {
+    switch (selected) {
       case 'coveo':
         console.log('Coveo selected');
         this.coveoSelected = !this.coveoSelected;
         this.vectorsolvSelected = false;
         this.pcoSelected = false;
-        break
+        break;
       case 'vectorsolv':
         console.log('vectorsolv selected');
         this.coveoSelected = false;
         this.vectorsolvSelected = !this.vectorsolvSelected;
         this.pcoSelected = false;
-        break
+        break;
       case 'pco':
         console.log('PCO selected');
         this.coveoSelected = false;
         this.vectorsolvSelected = false;
         this.pcoSelected = !this.pcoSelected;
-        break
+        break;
     }
   }
 
-  projects(selected: any){
-    switch(selected){
+  projects(selected: any) {
+    switch (selected) {
       case 'asl':
         console.log('ASL selected');
         this.aslSelected = !this.aslSelected;
         this.pricecompereSelected = false;
         this.tailorSelected = false;
-        break
+        break;
       case 'pricecompare':
         console.log('price compare selected');
         this.aslSelected = false;
         this.pricecompereSelected = !this.pricecompereSelected;
         this.tailorSelected = false;
-        break
+        break;
       case 'tailor':
         console.log('tailor selected');
         this.aslSelected = false;
         this.pricecompereSelected = false;
         this.tailorSelected = !this.tailorSelected;
-        break
+        break;
     }
   }
   particlesLoaded(container: Container): void {
@@ -181,21 +194,46 @@ export class AppComponent {
     // starting from v2 you can add only the features you need reducing the bundle size
     await loadFull(engine);
   }
-  toggleBrights(){
-    let currentScheme = !this.darkMode ? 1: 0
-    this.particlesOptions.background.color.value = this.colors[currentScheme].background
-    this.particlesOptions.particles.color.value = this.colors[currentScheme].particles
-    this.particlesOptions.particles.links.color = this.colors[currentScheme].particles
-    console.log(this.particlesOptions)
-    this.darkMode = !this.darkMode
-    let r:HTMLElement | null = document.querySelector(':root');
+  toggleBrights() {
+    let currentScheme = !this.darkMode ? 1 : 0;
+    this.particlesOptions.background.color.value =
+      this.colors[currentScheme].background;
+    this.particlesOptions.particles.color.value =
+      this.colors[currentScheme].particles;
+    this.particlesOptions.particles.links.color =
+      this.colors[currentScheme].particles;
+    console.log(this.particlesOptions);
+    this.darkMode = !this.darkMode;
+    let r: HTMLElement | null = document.querySelector(':root');
     if (r) {
-      let rs = getComputedStyle(r)
-      let scheme = this.darkMode ? 1: 0
-      r.style.setProperty('--primary-color' , this.colors[scheme].primary);
+      let rs = getComputedStyle(r);
+      let scheme = this.darkMode ? 1 : 0;
+      r.style.setProperty('--primary-color', this.colors[scheme].primary);
       r.style.setProperty('--on-primary-color', this.colors[scheme].onPrimary);
       r.style.setProperty('--secondary-color', this.colors[scheme].secondary);
-      r.style.setProperty('--on-secondary-color', this.colors[scheme].onsecondary);
+      r.style.setProperty(
+        '--on-secondary-color',
+        this.colors[scheme].onsecondary
+      );
     }
+  }
+
+  openLiveResume() {
+    console.log('Open Resume!');
+    this.openDialog();
+  }
+
+  animal: string | undefined;
+  name: string | undefined;
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(LiveResumeComponent, {
+      width: '60%',
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log('The dialog was closed');
+      this.animal = result;
+    });
   }
 }

@@ -36,16 +36,25 @@
           <a href="/assets/Logan Rose.pdf">
             <fa-icon [icon]="faFile" size="2x"></fa-icon>
           </a>
+          <button (click)="openLiveResume()">live</button>
         </div>
         <p style="text-align: center">
-          I am a hard-working, quick-learning developer looking to prove myself.
+          I am a hard-working, quick-learning developer with 2 years of
+          experience.
           <br />
-          I made this website to highlight some of my recent internship
-          placements and projects.
+          I made this website to highlight my work experience and some of the
+          projects I have been working on recently.
         </p>
-        <h1 class="subtitle">Internship Experience</h1>
       </div>
 
+      <div class="row">
+        <div>
+          <h1>Activity</h1>
+          <app-github-contributions></app-github-contributions>
+        </div>
+      </div>
+
+      <h1 class="subtitle">Internship Experience</h1>
       <div class="row">
         <mat-card class="tile" (click)="experience('coveo')">
           <img id="coveo" class="logo" src="../assets/img/coveo.png" />

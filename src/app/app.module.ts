@@ -6,14 +6,22 @@ import { AppComponent } from './app.component';
 import { MatButtonModule } from '@angular/material/button';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatCardModule } from '@angular/material/card';
-import { NgParticlesModule } from "ng-particles";
+import { NgParticlesModule } from 'ng-particles';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { MatChipsModule } from '@angular/material/chips';
+import { MatDialogModule } from '@angular/material/dialog';
+import { LiveResumeComponent } from './live-resume/live-resume.component';
+import { GraphQLModule } from './graphql.module';
+import { HttpClientModule } from '@angular/common/http';
+import { GithubContributionsComponent } from './github-contributions/github-contributions.component';
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    LiveResumeComponent,
+    GithubContributionsComponent,
   ],
   imports: [
+    MatDialogModule,
     BrowserModule,
     AppRoutingModule,
     MatButtonModule,
@@ -21,9 +29,11 @@ import { MatChipsModule } from '@angular/material/chips';
     BrowserAnimationsModule,
     NgParticlesModule,
     FontAwesomeModule,
-    MatChipsModule
+    MatChipsModule,
+    GraphQLModule,
+    HttpClientModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
