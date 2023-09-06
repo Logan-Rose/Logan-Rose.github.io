@@ -1,0 +1,56 @@
+{
+  "Jobs": 
+    [ {
+      "id": "Coveo",
+      "role":  "Technical Consultant",
+      "Links": ["JavaScript", "Python", "React", "Content indexing", "Sharepoint", "Salesforce LWC"],
+      "Description": "Blah Bla Blah",
+      "url": "coveo.com"
+    },
+    {
+      "id": "Vectorsolv",
+      "Role": "Full Stack Dev Intern",
+      "Links": ["JavaScript", "Angular"],
+      "Description": "Blah Bla Bl2ah",
+      "url":"vectorsolv.com"
+    },
+    {
+      "id": "PCO",
+      "Role": "Full Stack Dev Intern",
+      "Links": ["JavaScript", "Angular", ".NET"],
+      "Description": "Blah Bla Bl2ah",
+      "url":"vectorsolv.com"
+    }
+  ],
+  "Projects": 
+  [
+    {
+      "id": "ASL Transcriber",
+      "Links": ["Python", "OpenCV", "Keras", "Tensorflow", "uOttawa"],
+      "Description": "Blah Bla Bl2ah",
+      "url":"github.com"
+    },
+    {
+      "id": "Honours",
+      "Links": ["Python", "Machine Learning", "Imbalance", "Smote", "Multi task learning"],
+      "Description": "Blah Bla Bl2ah",
+      "url":"github.com"
+    },
+    {
+      "id": "Price Insight",
+      "Links": ["Angular", "NestJs", "AWS", "Lambda", "EC2" ],
+      "Description": "I am currently working on a MicroSAAS project",
+      "url":"github.com"
+    }
+  ],
+
+  "Education":[
+    {
+      "id": "uOttawa",
+      "Links": ["Data Structures", "Algorithms"],
+      "Description": "Blah Bla Bl2ah",
+      "url":"github.com"
+    }
+  ]
+  
+}
