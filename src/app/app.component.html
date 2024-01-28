@@ -27,23 +27,20 @@
         <h1 class="title">Hi, I'm Logan</h1>
         <img class="headshot" src="../assets/img/me.png" />
         <div class="footer">
-          <a href="https://github.com/Logan-Rose">
+          <a target="_blank" href="https://github.com/Logan-Rose">
             <fa-icon [icon]="faGithub" size="2x"></fa-icon>
           </a>
-          <a href="https://www.linkedin.com/in/logan-rose">
+          <a target="_blank" href="https:www.linkedin.com/in/logan-rose">
             <fa-icon [icon]="faLinkedin" size="2x"></fa-icon>
           </a>
-          <a href="/assets/Logan Rose.pdf">
+          <a target="_blank" href="/assets/Logan Rose.pdf">
             <fa-icon [icon]="faFile" size="2x"></fa-icon>
           </a>
         </div>
         <p style="text-align: center">
-          I am a hard-working, quick-learning developer looking to prove myself.
-          <br />
-          I made this website to highlight some of my recent internship
-          placements and projects.
+        I am a software developer with 3 years of experience writing<br> quality code for some of the world's leading brands.
         </p>
-        <h1 class="subtitle">Internship Experience</h1>
+        <h1 class="subtitle">Work Experience</h1>
       </div>
 
       <div class="row">
@@ -62,29 +59,39 @@
         class="row description"
       >
         <div *ngIf="coveoSelected" class="textbox">
-          <a href="https://coveo.com">
+          <a target="_blank" href="https://coveo.com">
             <h2 class="project-title">Coveo</h2>
           </a>
-          <h3>Software Developer Consultant Intern</h3>
+          <h3>Solutions Software Developer</h3>
           <h3>May 2022 - Present</h3>
           <mat-chip-list>
+            <mat-chip>StencilJS</mat-chip>
+            <mat-chip>Requirments gathering</mat-chip>
+            <mat-chip>Scoping</mat-chip>
+            <mat-chip>Data Normalization</mat-chip>
             <mat-chip>Salesforce LWC</mat-chip>
             <mat-chip>Python</mat-chip>
             <mat-chip>.NET</mat-chip>
             <mat-chip>Azure</mat-chip>
             <mat-chip>Git</mat-chip>
-            <mat-chip>Consulting</mat-chip>
+            <mat-chip>Communication</mat-chip>
             <mat-chip>Time Management</mat-chip>
           </mat-chip-list>
           <hr />
-          <p>
-            I used a broad variety of tools, frameworks, and programming
-            languages to develop enterprise search solutions for clients. I
-            participated in client meetings to gather requirements, propose
-            solutions and provide development progress updates. In addition to
-            customer-facing roles, I worked to develop new features for internal
-            Azure DevOps extensions.
-          </p>
+            <ul>
+              <li>
+                I work closely with a number of <a class="link" target="_blank" href="https://www.coveo.com/en/company/customers">Coveo's largest strategic clients</a> to implement AI powered search in service, e-commerce, and workplace solutions.
+              </li>
+              <li>
+                I have a framework-agnostic understanding of the best principles and practices to build a powerful and efficient search experience.
+              </li>
+              <li>
+                I have worked closely with clients to provide strategic guidance and implementation support for mission-critical product features.
+              </li>
+              <li>
+                In addition to my main responsibilities, I work closely with our interns, assigning them tasks, providing assistance, and explaining the best practices for success
+              </li>
+            </ul>
         </div>
         <div *ngIf="vectorsolvSelected" class="textbox">
           <a href="https://vectorsolv.com">
@@ -103,15 +110,17 @@
             <mat-chip>RxJs</mat-chip>
           </mat-chip-list>
           <hr />
-          <p>
-            At Vectorsolv, I worked as a part of a small startup team taking
-            end-to-end ownership of projects and tasks to satisfy client
-            requirements. I Built secure server-side APIs using NestJS alongside
-            TypeORM and PostgreSQL to develop and manage databases. I developed
-            reusable client-side web components using Angular, and took
-            ownership of a major project to develop a highly customizable
-            web-based data science dashboard.
-          </p>
+            <ul>
+              <li>
+                I worked as a part of a small startup team, taking end-to-end ownership tasks to satisfy client requirements.
+              </li>
+              <li>
+                I developed reusable client-side web components using Angular, and took ownership of a major project to develop a highly customizable web-based data science dashboard.
+              </li>
+              <li>
+                I built secure server-side APIs using NestJS alongside TypeORM and PostgreSQL to develop and manage databases.
+              </li>
+            </ul>
         </div>
         <div *ngIf="pcoSelected" class="textbox">
           <a href="https://www.canada.ca/en/privy-council.html">
@@ -125,13 +134,11 @@
             <mat-chip>Microsoft SQL Server</mat-chip>
           </mat-chip-list>
           <hr />
-          <p>
-            At The Privy Council Office, I developed reusable client-side web
-            components using Angular for a news media aggregator. I Used .NET to
-            develop secure server-side APIs alongside Microsoft SQL Server for
-            database management. I also reviewed code, debugged problems, and
-            corrected issues.
-          </p>
+          <ul>
+          <li>I developed reusable client-side web components using Angular for a news media aggregator.</li>
+          <li>I used .NET to develop secure server-side APIs alongside Microsoft SQL Server for database management. </li>
+          <li>I reviewed code, debugged problems, and corrected issues.</li>
+          </ul>
         </div>
       </div>
       <h1 class="subtitle">Recent Projects</h1>
@@ -143,7 +150,7 @@
           <img class="logo" src="../assets/img/pricecompare.png" />
         </mat-card>
         <mat-card class="tile" (click)="projects('tailor')">
-          <img class="logo" src="../assets/img/tailor.png" />
+          <img class="logo" src="../assets/img/french.png" />
         </mat-card>
       </div>
       <div
@@ -160,51 +167,57 @@
             <mat-chip>Computer Vision</mat-chip>
           </mat-chip-list>
           <hr />
-          <p>
-            I developed a video tool capable of converting words spelled using
-            American Sign Language to text. This was accomplished by using
-            OpenCV to find and capture hand signs from a webcam video stream,
-            frames were then fed to a neural network built with TensorFlow and
-            the final output was constructed by processing the list of
-            classified frames through a custom algorithm.
-          </p>
+          <ul>
+            <li>I developed a program to convert a video of words spelled using
+              American Sign Language to text.</li>
+            <li>I used OpenCV to find and capture hand signs from a webcam video stream,
+            then fed the video frames to a neural network built with TensorFlow.</li>
+            <li>I constructed the final output text by processing the list of classified frames through a custom algorithm to remove duplicate letters and outliers.</li>
+          </ul>
         </div>
         <div *ngIf="pricecompereSelected" class="textbox">
-          <a href="https://github.com/Logan-Rose/pricecompare">
-            <h2 class="project-title">Price Compare</h2>
-          </a>
+          <h2 class="project-title">Price Insight</h2>
           <mat-chip-list>
-            <mat-chip>Python</mat-chip>
+            <mat-chip>Angular</mat-chip>
+            <mat-chip>AWS (EC2, Lambda, S3)</mat-chip>
+            <mat-chip>JWT based authentication</mat-chip>
+            <mat-chip>Data analysis (Pandas, matplotlib, numpy)</mat-chip>
             <mat-chip>Web Scraping</mat-chip>
-            <mat-chip>Requirements Solicitation</mat-chip>
+            <mat-chip>Product Management</mat-chip>
           </mat-chip-list>
           <hr />
-          <p>
-            I was hired as a freelance software developer to create a program
-            for a small business to scrape price data from competitors,
-            highlight price disparities, and output relevant information to
-            spreadsheets for analysis.
-          </p>
+          <ul>
+            <li>
+              For the past year, I have been working with a non-technical business partner to build a business intelligence platform.
+            </li>
+            <li>
+              I have developed the infrastructure to track prices and inventory levels of selected products across many retailers. This data can then be aggregated and used to drive pricing and ordering decisions.
+            </li>
+            <li>
+              We have conducted alpha testing with potential clients to gather requirements and determine the product direction.
+            </li>
+            <li>
+              The code is closed source, but we do have a live demo if your interested in what we're up to!
+            </li>
+          </ul>
         </div>
 
         <div *ngIf="tailorSelected" class="textbox">
-          <a href="https://github.com/Logan-Rose/tailor">
-            <h2 class="project-title">Tailor: The Modular Resume Builder</h2>
+          <a href="https://github.com/Logan-Rose/languageLearner">
+            <h2 class="project-title">Language Learner</h2>
           </a>
           <mat-chip-list>
-            <mat-chip>Angular</mat-chip>
-            <mat-chip>Material UI</mat-chip>
+            <mat-chip>React Native</mat-chip>
             <mat-chip>Firebase</mat-chip>
+            <mat-chip>Algorithm Development</mat-chip>
+            <mat-chip>French</mat-chip>
           </mat-chip-list>
           <hr />
-          <p>
-            I am currenlty developing a modular resume builder using Angular and
-            Firebase. In the app, users can build a resume by positioning and
-            resizing tiles containing information about their education, work
-            experience, skills, etc. Currently I am working on adding
-            functionality allowing users to save layouts to their account, and
-            print to PDF.
-          </p>
+          <ul>
+            <li>I am currently developing a mobile app to help me with my French learning.</li>
+            <li>I implemented a modified version of the <a target="_blank" href="https://en.wikipedia.org/wiki/SuperMemo">SuperMemo2 Algorithm</a>, which determines which words to retrieve from a firebase database according to my past performance at translating them.</li>
+            <li>My french has improved greatly since I began developing the app!</li>
+          </ul>
         </div>
       </div>
       <div class="footer">

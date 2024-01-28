@@ -13,8 +13,19 @@
     width:45% !important
   }
 }
+
+//Montserrat
+@font-face {
+    font-family: 'montserrat';
+    src: url('../assets/Montserrat.ttf');
+}
+.link {
+  text-decoration: underline;
+
+}
+
 * {
-  font-family: 'Times New Roman', Times, serif !important;
+  font-family: 'montserrat', Times, serif !important;
 }
 .page{
   display: flex;
@@ -33,7 +44,7 @@ mat-card{
   justify-content: center;
 }
 
-.content{
+p.content{
   width: 100%;
 }
 
@@ -53,7 +64,7 @@ mat-card{
 .tile-selected {
 
   box-shadow: 2px 2px 5px var(--on-primary-color);
- 
+
 }
 .tile {
   width: 25%;
@@ -119,19 +130,13 @@ mat-chip{
   border-radius: 100%;
   border: solid 4px var(--on-primary-color);
 }
-.headshot:hover {
-  cursor: pointer;
-  transition-duration: .75s;
-  border-radius: 5%;
-
-}
 a {
   text-decoration: none;
   color: var(--on-primary-color);
 }
 .project-title{
   width: fit-content;
-  
+
 }
 .project-title:hover {
   text-decoration: underline;
